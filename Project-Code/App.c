@@ -24,7 +24,52 @@ uint8 start_cooking_flag = 5, clear_cooking_flag = 5;
 /*******************************************************************************
  *                       Local Functions Definitions                           *
  *******************************************************************************/
-
+*******************************************************************************/
+/************************************************************************************
+* Private Function
+* Function Name: string_to_int
+* Parameters (in): ch
+* Parameters (out): uint16 value
+* Return value: uint16 value
+* Description: Func to convert numbers from keypad which in form of string to integers.
+************************************************************************************/
+uint16 string_to_int(uint8 ch)
+{
+	switch (ch)
+	{
+	case '0':
+		return 0;
+		break;
+	case '1':
+		return 1;
+		break;
+	case '2':
+		return 2;
+		break;
+	case '3':
+		return 3;
+		break;
+	case '4':
+		return 4;
+		break;
+	case '5':
+		return 5;
+		break;
+	case '6':
+		return 6;
+		break;
+	case '7':
+		return 7;
+		break;
+	case '8':
+		return 8;
+		break;
+	case '9':
+		return 9;
+		break;
+	}
+	return -1;
+}
 /*******************************************************************************
  *                 Interrupt Handler Functions Definitions                     *
  *******************************************************************************/
