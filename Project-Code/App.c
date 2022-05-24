@@ -74,6 +74,20 @@ uint16 string_to_int(uint8 ch)
  *                 Interrupt Handler Functions Definitions                     *
  *******************************************************************************/
 
+/************************************************************************************
+* Function Name: SysTick_Handler
+* Parameters (in): None
+* Parameters (out): None
+* Return value: None
+* Description: SysTick Timer Interrupt Handler ... No need to clear the trigger flag
+* 			   (COUNT) bit ... it cleared automatically by the HW.
+************************************************************************************/
+void SysTick_Handler(void)
+{
+	ticks_num--; /* increment the number of ticks */
+	LCD_displayCounter(ticks_num);
+}
+
 /*******************************************************************************
  *                       Global Functions Definitions                          *
  *******************************************************************************/
