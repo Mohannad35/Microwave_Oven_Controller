@@ -87,6 +87,88 @@ void SysTick_Handler(void)
 	ticks_num--; /* increment the number of ticks */
 	LCD_displayCounter(ticks_num);
 }
+/************************************************************************************
+* Function Name: GPIOPortF_Handler
+* Parameters (in): None
+* Parameters (out): None
+* Return value: None
+* Description: GPIO PortF Interrupt Handler. (for Stop and start switches)
+************************************************************************************/
+void GPIOPortF_Handler(void)
+{
+	if (Read_STOP_SW())
+	{
+		/* Clear Trigger flag for SW1 (Interupt Flag) */
+    	(*((volatile uint32 *)(SW_PORT + PORT_ICR_OFFSET)))   |= (1<<SW1_PIN);
+
+		/* STOP button pressed for 1st time */
+		if (first_stop_flag == 0)
+		{
+			first_stop_flag = 1;
+			second_stop_flag = 5;
+			SysTick_Disable();
+		}
+		/* STOP button pressed for 2nd time */
+		else if (first_stop_flag == 1)
+		{
+			first_stop_flag = 5;
+			second_stop_flag = 1;
+			LED_OFF();
+			SysTick_Disable();
+			ticks_num = 0;
+		}
+
+		if (clear_cooking_flag == 0)
+		{
+			CookingTime_cur_Pos = 0;
+			LCD_displayStringRowColumn(0, 0, "Cooking Time?");
+			LCD_displayStringRowColumn(1, 0, "00:00");
+		}
+	}
+	/* START button pressed */
+	else if (Read_START_SW())
+	{
+		/* Clear Trigger flag for SW2 (Interupt Flag) */
+    	(*((volatile uint32 *)(SW_PORT + PORT_ICR_OFFSET)))   |= (1<<SW2_PIN);
+
+		if (first_stop_flag == 1)
+		{
+			second_stop_flag = 5;
+			first_stop_flag = 0;
+			LED_ON();
+			SysTick_Enable();
+		}
+		if (start_cooking_flag == 0)
+		{
+			// LED_ON();
+			start_cooking_flag = 1;
+		}
+	}
+}
+
+/************************************************************************************
+* Function Name: GPIOPortA_Handler
+* Parameters (in): None
+* Parameters (out): None
+* Return value: None
+* Description: GPIO PortA Interrupt Handler. (for Door latch)
+************************************************************************************/
+void GPIOPortA_Handler(void)
+{
+	while (BIT_IS_SET((*((volatile uint32 *)(Door_SW_PORT + PORT_RIS_OFFSET))), SW3_PIN))
+	{
+		LED_TOGGLE();
+		for (uint16 i = 0; i < 100; i++)
+		{
+			Delay_MS(10);
+			if (BIT_IS_CLEAR((*((volatile uint32 *)(Door_SW_PORT + PORT_RIS_OFFSET))), SW3_PIN))
+			{
+				LED_OFF();
+				break;
+			}
+		}
+	}
+}
 
 /*******************************************************************************
  *                       Global Functions Definitions                          *
