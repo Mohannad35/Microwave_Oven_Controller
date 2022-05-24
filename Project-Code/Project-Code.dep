@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>5</fileVersion>
+    <fileChecksum>3228313500</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\Debug\Obj\cstartup_M.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+            <file>$PROJ_DIR$\main.c</file>
+            <file>$PROJ_DIR$\tm4c123gh6pm_registers.h</file>
+            <file>$PROJ_DIR$\Project-Code.c</file>
+            <file>$PROJ_DIR$\cstartup_M.c</file>
+            <file>$PROJ_DIR$\std_types.h</file>
+            <file>$PROJ_DIR$\common_macros.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\Project-Code.o</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 1</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Project-Code.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 8</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\cstartup_M.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 0</file>
+                </tool>
+            </outputs>
+        </file>
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>

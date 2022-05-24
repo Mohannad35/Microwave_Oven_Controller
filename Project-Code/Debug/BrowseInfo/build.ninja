@@ -1,0 +1,51 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\cstartup_M.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\cstartup_M.c" -xcl_file "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\cstartup_M.xcl" -macro_file "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\cstartup_M.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\cstartup_M.c" -o "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\cstartup_M.tmp"
+  rspfile_name = D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\cstartup_M.xcl.rsp
+
+build D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\main.c" -xcl_file "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\main.xcl" -macro_file "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\main.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\main.c" -o "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\main.tmp"
+  rspfile_name = D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\main.xcl.rsp
+
+build D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\cstartup_M.pbi : INDEXER D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\cstartup_M.xcl |  $
+D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\cstartup_M.c
+  flags = "-out=D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\cstartup_M.pbi" -f "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\cstartup_M.xcl"
+
+build D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\main.pbi : INDEXER D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\main.xcl |  $
+D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\main.c
+  flags = "-out=D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\main.pbi" -f "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\main.xcl"
+
+build D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\Project-Code.pbw : MAKEBROWSE D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\Project-Code.pbd
+  flags = "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\Project-Code.pbd" -output "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\Project-Code.pbw"
+
+build D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\Project-Code.pbd : PDBLINK D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\cstartup_M.pbi |  $
+D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\main.pbi
+  flags = -M "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\Project-Code.pbd" "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\cstartup_M.pbi" "D$:\Education\3rd$ CSE\3rd$ CSE$ 2nd$ term\CSE312$ Microprocessors$ Based$ Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\main.pbi"
+
