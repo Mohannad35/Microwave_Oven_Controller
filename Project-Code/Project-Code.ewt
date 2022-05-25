@@ -2840,16 +2840,46 @@
         </settings>
     </configuration>
     <file>
+        <name>$PROJ_DIR$\App.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\App.h</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\common_macros.h</name>
     </file>
     <file>
         <name>$PROJ_DIR$\cstartup_M.c</name>
     </file>
     <file>
+        <name>$PROJ_DIR$\keypad.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\keypad.h</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\LCD.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\LCD.h</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\LED_SW.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\LED_SW.h</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\main.c</name>
     </file>
     <file>
         <name>$PROJ_DIR$\std_types.h</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\systick.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\systick.h</name>
     </file>
     <file>
         <name>$PROJ_DIR$\tm4c123gh6pm_registers.h</name>

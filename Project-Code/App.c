@@ -154,6 +154,8 @@ void GPIOPortF_Handler(void)
 ************************************************************************************/
 void GPIOPortA_Handler(void)
 {
+	// store the current LED state to return it after we done blinking the LED
+	uint8 Led_state = BIT_IS_SET((*((volatile uint32 *)(LED_PORT + PORT_DATA_REG_OFFSET))), LED_PIN);
 	while (BIT_IS_SET((*((volatile uint32 *)(Door_SW_PORT + PORT_RIS_OFFSET))), SW3_PIN))
 	{
 		LED_TOGGLE();
@@ -162,7 +164,14 @@ void GPIOPortA_Handler(void)
 			Delay_MS(10);
 			if (BIT_IS_CLEAR((*((volatile uint32 *)(Door_SW_PORT + PORT_RIS_OFFSET))), SW3_PIN))
 			{
-				LED_OFF();
+				if (Led_state)
+				{
+					LED_ON();
+				}
+				else
+				{
+					LED_OFF();
+				}
 				break;
 			}
 		}

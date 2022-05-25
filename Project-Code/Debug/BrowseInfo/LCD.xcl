@@ -1,13 +1,13 @@
-"D:\Education\3rd CSE\3rd CSE 2nd term\CSE312 Microprocessors Based Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\cstartup_M.c"
+"D:\Education\3rd CSE\3rd CSE 2nd term\CSE312 Microprocessors Based Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\LCD.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -funsigned-char
 -MD
 -MF
-D:\Education\3rd CSE\3rd CSE 2nd term\CSE312 Microprocessors Based Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\cstartup_M.pbi.dep
+D:\Education\3rd CSE\3rd CSE 2nd term\CSE312 Microprocessors Based Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\LCD.pbi.dep
 -o
-D:\Education\3rd CSE\3rd CSE 2nd term\CSE312 Microprocessors Based Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\cstartup_M.pbi
+D:\Education\3rd CSE\3rd CSE 2nd term\CSE312 Microprocessors Based Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code\Debug\BrowseInfo\LCD.pbi
 -I
 D:\Education\3rd CSE\3rd CSE 2nd term\CSE312 Microprocessors Based Systems\Project\Microwave_Oven_Controller\Microwave_Oven_Controller\Project-Code
 -I
